@@ -1,0 +1,595 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+      <meta name="copyright" content="(C) Copyright 2005"></meta>
+      <meta name="DC.rights.owner" content="(C) Copyright 2005"></meta>
+      <meta name="DC.Type" content="cppModule"></meta>
+      <meta name="DC.Title" content="Graphics Interoperability"></meta>
+      <meta name="abstract" content=""></meta>
+      <meta name="description" content=""></meta>
+      <meta name="DC.Format" content="XHTML"></meta>
+      <meta name="DC.Identifier" content="group__CUDART__INTEROP"></meta>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/commonltr.css"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/site.css"></link>
+      <title>CUDA Runtime API :: CUDA Toolkit Documentation</title>
+      <!--[if lt IE 9]>
+      <script src="../common/formatting/html5shiv-printshiv.min.js"></script>
+      <![endif]-->
+      <script type="text/javascript" charset="utf-8" src="../common/scripts/tynt/tynt.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.ba-hashchange.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.scrollintoview.min.js"></script>
+      <script type="text/javascript" src="../search/htmlFileList.js"></script>
+      <script type="text/javascript" src="../search/htmlFileInfoList.js"></script>
+      <script type="text/javascript" src="../search/nwSearchFnt.min.js"></script>
+      <script type="text/javascript" src="../search/stemmers/en_stemmer.min.js"></script>
+      <script type="text/javascript" src="../search/index-1.js"></script>
+      <script type="text/javascript" src="../search/index-2.js"></script>
+      <script type="text/javascript" src="../search/index-3.js"></script>
+      <link rel="canonical" href="index.html"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/qwcode.highlight.css"></link>
+   </head>
+   <body>
+      
+      <header id="header"><span id="company">NVIDIA</span><span id="site-title">CUDA Toolkit Documentation</span><form id="search" method="get" action="http://docs.nvidia.com/cuda/cuda-runtime-api/search">
+            <input type="text" name="search-text"></input><fieldset id="search-location">
+               <legend>Search In:</legend>
+               <label><input type="radio" name="search-type" value="site"></input>Entire Site</label>
+               <label><input type="radio" name="search-type" value="document"></input>Just This Document</label></fieldset>
+            <button type="reset">clear search</button>
+            <button id="submit" type="submit">search</button></form>
+      </header>
+      <div id="site-content">
+         <nav id="site-nav">
+            <div class="category closed"><a href="http://docs.nvidia.com/cuda/index.html" title="The root of the site.">CUDA Toolkit
+                  v6.0</a></div>
+            <div class="category"><a href="index.html" title="CUDA Runtime API">CUDA Runtime API</a></div>
+            <ul>
+               <li>
+                  <div class="section-link"><a href="api-sync-behavior.html#api-sync-behavior">1.&nbsp;API synchronization behavior </a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="stream-sync-behavior.html#stream-sync-behavior">2.&nbsp;Stream synchronization behavior</a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="modules.html#modules">3.&nbsp;Modules</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__DEVICE.html#group__CUDART__DEVICE">3.1.&nbsp;Device Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__THREAD__DEPRECATED.html#group__CUDART__THREAD__DEPRECATED">3.2.&nbsp;Thread Management [DEPRECATED]</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__ERROR.html#group__CUDART__ERROR">3.3.&nbsp;Error Handling</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__STREAM.html#group__CUDART__STREAM">3.4.&nbsp;Stream Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__EVENT.html#group__CUDART__EVENT">3.5.&nbsp;Event Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__EXECUTION.html#group__CUDART__EXECUTION">3.6.&nbsp;Execution Control</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__MEMORY.html#group__CUDART__MEMORY">3.7.&nbsp;Memory Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__UNIFIED.html#group__CUDART__UNIFIED">3.8.&nbsp;Unified Addressing</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__PEER.html#group__CUDART__PEER">3.9.&nbsp;Peer Device Memory Access</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__OPENGL.html#group__CUDART__OPENGL">3.10.&nbsp;OpenGL Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__OPENGL__DEPRECATED.html#group__CUDART__OPENGL__DEPRECATED">3.11.&nbsp;OpenGL Interoperability [DEPRECATED]</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D9.html#group__CUDART__D3D9">3.12.&nbsp;Direct3D 9 Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D9__DEPRECATED.html#group__CUDART__D3D9__DEPRECATED">3.13.&nbsp;Direct3D 9 Interoperability [DEPRECATED]</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D10.html#group__CUDART__D3D10">3.14.&nbsp;Direct3D 10 Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D10__DEPRECATED.html#group__CUDART__D3D10__DEPRECATED">3.15.&nbsp;Direct3D 10 Interoperability [DEPRECATED]</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D11.html#group__CUDART__D3D11">3.16.&nbsp;Direct3D 11 Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D11__DEPRECATED.html#group__CUDART__D3D11__DEPRECATED">3.17.&nbsp;Direct3D 11 Interoperability [DEPRECATED]</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__VDPAU.html#group__CUDART__VDPAU">3.18.&nbsp;VDPAU Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__INTEROP.html#group__CUDART__INTEROP">3.19.&nbsp;Graphics Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__TEXTURE.html#group__CUDART__TEXTURE">3.20.&nbsp;Texture Reference Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__SURFACE.html#group__CUDART__SURFACE">3.21.&nbsp;Surface Reference Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__TEXTURE__OBJECT.html#group__CUDART__TEXTURE__OBJECT">3.22.&nbsp;Texture Object Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__SURFACE__OBJECT.html#group__CUDART__SURFACE__OBJECT">3.23.&nbsp;Surface Object Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART____VERSION.html#group__CUDART____VERSION">3.24.&nbsp;Version Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__HIGHLEVEL.html#group__CUDART__HIGHLEVEL">3.25.&nbsp;C++ API Routines</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__DRIVER.html#group__CUDART__DRIVER">3.26.&nbsp;Interactions with the CUDA Driver API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__PROFILER.html#group__CUDART__PROFILER">3.27.&nbsp;Profiler Control</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES">3.28.&nbsp;Data types used by CUDA Runtime</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="annotated.html#annotated">4.&nbsp;Data Structures</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="structcudaChannelFormatDesc.html#structcudaChannelFormatDesc">4.1.&nbsp;cudaChannelFormatDesc</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaDeviceProp.html#structcudaDeviceProp">4.2.&nbsp;cudaDeviceProp</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaExtent.html#structcudaExtent">4.3.&nbsp;cudaExtent</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaFuncAttributes.html#structcudaFuncAttributes">4.4.&nbsp;cudaFuncAttributes</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaIpcEventHandle__t.html#structcudaIpcEventHandle__t">4.5.&nbsp;cudaIpcEventHandle_t</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaIpcMemHandle__t.html#structcudaIpcMemHandle__t">4.6.&nbsp;cudaIpcMemHandle_t</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaMemcpy3DParms.html#structcudaMemcpy3DParms">4.7.&nbsp;cudaMemcpy3DParms</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaMemcpy3DPeerParms.html#structcudaMemcpy3DPeerParms">4.8.&nbsp;cudaMemcpy3DPeerParms</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaPitchedPtr.html#structcudaPitchedPtr">4.9.&nbsp;cudaPitchedPtr</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaPointerAttributes.html#structcudaPointerAttributes">4.10.&nbsp;cudaPointerAttributes</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaPos.html#structcudaPos">4.11.&nbsp;cudaPos</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaResourceDesc.html#structcudaResourceDesc">4.12.&nbsp;cudaResourceDesc</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaResourceViewDesc.html#structcudaResourceViewDesc">4.13.&nbsp;cudaResourceViewDesc</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaTextureDesc.html#structcudaTextureDesc">4.14.&nbsp;cudaTextureDesc</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structsurfaceReference.html#structsurfaceReference">4.15.&nbsp;surfaceReference</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structtextureReference.html#structtextureReference">4.16.&nbsp;textureReference</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="functions.html#functions">5.&nbsp;Data Fields</a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="deprecated.html#deprecated">6.&nbsp;Deprecated List</a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="notices-header.html#notices-header">Notices</a></div>
+                  <ul></ul>
+               </li>
+            </ul>
+         </nav>
+         <div id="resize-nav"></div>
+         <nav id="search-results">
+            <h2>Search Results</h2>
+            <ol></ol>
+         </nav>
+         
+         <div id="contents-container">
+            <div id="breadcrumbs-container">
+               <div id="breadcrumbs"><a href="group__CUDART__VDPAU.html" shape="rect">&lt; Previous</a> | <a href="group__CUDART__TEXTURE.html" shape="rect">Next &gt;</a></div>
+               <div id="release-info">CUDA Runtime API
+                  (<a href="http://docs.nvidia.com/cuda/pdf/CUDA_Runtime_API.pdf">PDF</a>)
+                  -
+                  
+                  v6.0
+                  (<a href="https://developer.nvidia.com/cuda-toolkit-archive">older</a>)
+                  -
+                  Last updated February 13, 2014
+                  -
+                  <a href="mailto:cudatools@nvidia.com?subject=CUDA Toolkit Documentation Feedback: CUDA Runtime API">Send Feedback</a>
+                  -
+                  <span class="st_facebook"></span><span class="st_twitter"></span><span class="st_linkedin"></span><span class="st_reddit"></span><span class="st_slashdot"></span><span class="st_tumblr"></span><span class="st_sharethis"></span></div>
+            </div>
+            <article id="contents">
+               <div class="topic reference apiRef apiPackage cppModule" id="group__CUDART__INTEROP"><a name="group__CUDART__INTEROP" shape="rect">
+                     <!-- --></a><h2 class="topictitle2 cppModule">3.19.&nbsp;Graphics Interoperability</h2>
+                  <div class="section">
+                     <p>This section describes the graphics interoperability functions of the CUDA runtime application programming interface. </p>
+                  </div>
+                  <h3 class="fake_sectiontitle member_header">Functions</h3>
+                  <dl class="members">
+                     <dt><span class="member_type"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a>&nbsp;</span><span class="member_name"><a href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1gb7064fb72e54d89d0666e192b45d35cc" shape="rect">cudaGraphicsMapResources</a> (  int <span>&nbsp;</span><span class="keyword keyword apiItemName">count</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a>*<span>&nbsp;</span><span class="keyword keyword apiItemName">resources</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1ge15d9c8b7a240312b533d6122558085a" title="" shape="rect">cudaStream_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">stream</span> = <span class="ph ph apiData">0</span> ) </span></dt>
+                     <dd class="shortdesc"><span></span><span class="desc">Map graphics resources for access by CUDA. </span></dd>
+                     <dt><span class="member_type"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a>&nbsp;</span><span class="member_name"><a href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1g2e065be078849f1da2cc485788110307" shape="rect">cudaGraphicsResourceGetMappedMipmappedArray</a> (  <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1g1b03ad14fc0ab86f8b033837f5562d8a" title="" shape="rect">cudaMipmappedArray_t</a>*<span>&nbsp;</span><span class="keyword keyword apiItemName">mipmappedArray</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">resource</span> ) </span></dt>
+                     <dd class="shortdesc"><span></span><span class="desc">Get a mipmapped array through which to access a mapped graphics resource. </span></dd>
+                     <dt><span class="member_type"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a>&nbsp;</span><span class="member_name"><a href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1ge7f893864a3d38a630e71a99f5a4e17f" shape="rect">cudaGraphicsResourceGetMappedPointer</a> (  void**<span>&nbsp;</span><span class="keyword keyword apiItemName">devPtr</span>, size_t*<span>&nbsp;</span><span class="keyword keyword apiItemName">size</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">resource</span> ) </span></dt>
+                     <dd class="shortdesc"><span></span><span class="desc">Get an device pointer through which to access a mapped graphics resource. </span></dd>
+                     <dt><span class="member_type"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a>&nbsp;</span><span class="member_name"><a href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1g4b7e5e82663df019a4bcf03d50835465" shape="rect">cudaGraphicsResourceSetMapFlags</a> (  <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">resource</span>, unsigned int <span>&nbsp;</span><span class="keyword keyword apiItemName">flags</span> ) </span></dt>
+                     <dd class="shortdesc"><span></span><span class="desc">Set usage flags for mapping a graphics resource. </span></dd>
+                     <dt><span class="member_type"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a>&nbsp;</span><span class="member_name"><a href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1gfc796cc80e7a054b13d90afde659546e" shape="rect">cudaGraphicsSubResourceGetMappedArray</a> (  <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gaf8b3ba752727d996074a71ee997ce68" title="" shape="rect">cudaArray_t</a>*<span>&nbsp;</span><span class="keyword keyword apiItemName">array</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">resource</span>, unsigned int <span>&nbsp;</span><span class="keyword keyword apiItemName">arrayIndex</span>, unsigned int <span>&nbsp;</span><span class="keyword keyword apiItemName">mipLevel</span> ) </span></dt>
+                     <dd class="shortdesc"><span></span><span class="desc">Get an array through which to access a subresource of a mapped graphics resource. </span></dd>
+                     <dt><span class="member_type"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a>&nbsp;</span><span class="member_name"><a href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1gc4dcf300df27f8cf51a89f0287b07861" shape="rect">cudaGraphicsUnmapResources</a> (  int <span>&nbsp;</span><span class="keyword keyword apiItemName">count</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a>*<span>&nbsp;</span><span class="keyword keyword apiItemName">resources</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1ge15d9c8b7a240312b533d6122558085a" title="" shape="rect">cudaStream_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">stream</span> = <span class="ph ph apiData">0</span> ) </span></dt>
+                     <dd class="shortdesc"><span></span><span class="desc">Unmap graphics resources. </span></dd>
+                     <dt><span class="member_type"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a>&nbsp;</span><span class="member_name"><a href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1g1d45ac44d1affe17fb356e0b7a0b0560" shape="rect">cudaGraphicsUnregisterResource</a> (  <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">resource</span> ) </span></dt>
+                     <dd class="shortdesc"><span></span><span class="desc">Unregisters a graphics resource for access by CUDA. </span></dd>
+                  </dl>
+                  <div class="description">
+                     <h3 class="sectiontitle">Functions</h3>
+                     <dl class="description">
+                        <dt class="description"><a name="group__CUDART__INTEROP_1gb7064fb72e54d89d0666e192b45d35cc" id="group__CUDART__INTEROP_1gb7064fb72e54d89d0666e192b45d35cc" shape="rect">
+                              <!-- --></a><span><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a> cudaGraphicsMapResources (  int <span>&nbsp;</span><span class="keyword keyword apiItemName">count</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a>*<span>&nbsp;</span><span class="keyword keyword apiItemName">resources</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1ge15d9c8b7a240312b533d6122558085a" title="" shape="rect">cudaStream_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">stream</span> = <span class="ph ph apiData">0</span> ) </span></dt>
+                        <dd class="description">
+                           <div class="section">Map graphics resources for access by CUDA. </div>
+                           <div class="section">
+                              <h6 class="parameter_header">
+                                 Parameters
+                                 
+                              </h6>
+                              <dl class="table-display-params">
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">count</span></tt></dt>
+                                 <dd>- Number of resources to map </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">resources</span></tt></dt>
+                                 <dd>- Resources to map for CUDA </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">stream</span></tt></dt>
+                                 <dd>- Stream for synchronization</dd>
+                              </dl>
+                           </div>
+                           <div class="section">
+                              <h6 class="return_header">Returns</h6>
+                              <p class="return"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038e355f04607d824883b4a50662830d591" shape="rect">cudaSuccess</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038c4673247aee4d1ab8d07871f376e0273" shape="rect">cudaErrorInvalidResourceHandle</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a></p>
+                           </div>
+                           <div class="section">
+                              <h6 class="description_header">Description</h6>
+                              <p>Maps the <tt class="ph tt code">count</tt> graphics resources in <tt class="ph tt code">resources</tt> for access by CUDA.
+                              </p>
+                              <p class="p">The resources in <tt class="ph tt code">resources</tt> may be accessed by CUDA until they are unmapped. The graphics API from which <tt class="ph tt code">resources</tt> were registered should not access any resources while they are mapped by CUDA. If an application does so, the results are
+                                 undefined.
+                              </p>
+                              <p class="p">This function provides the synchronization guarantee that any graphics calls issued before <a class="xref" href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1gb7064fb72e54d89d0666e192b45d35cc" title="Map graphics resources for access by CUDA." shape="rect">cudaGraphicsMapResources()</a> will complete before any subsequent CUDA work issued in <tt class="ph tt code">stream</tt> begins.
+                              </p>
+                              <p class="p">If <tt class="ph tt code">resources</tt> contains any duplicate entries then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038c4673247aee4d1ab8d07871f376e0273" shape="rect">cudaErrorInvalidResourceHandle</a> is returned. If any of <tt class="ph tt code">resources</tt> are presently mapped for access by CUDA then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a> is returned.
+                              </p>
+                              <p class="p"></p>
+                              <p class="p"></p>
+                              <p class="p">
+                                 <div class="note note"><span class="notetitle">Note:</span><ul class="ul">
+                                       <li class="li">
+                                          <p class="p">This function uses standard  <a class="xref xmlonly" href="stream-sync-behavior.html#stream-sync-behavior__null-stream" shape="rect">NULL stream</a> semantics. 
+                                          </p>
+                                       </li>
+                                       <li class="li">
+                                          <p class="p">Note that this function may also return error codes from previous, asynchronous launches.</p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </p>
+                              <p class="p"></p>
+                              <p class="p apiDesc_subtitle"><strong class="ph b">See also:</strong></p>
+                              <p class="p see_subsection"><a class="xref" href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1ge7f893864a3d38a630e71a99f5a4e17f" title="Get an device pointer through which to access a mapped graphics resource." shape="rect">cudaGraphicsResourceGetMappedPointer</a>, <a class="xref" href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1gfc796cc80e7a054b13d90afde659546e" title="Get an array through which to access a subresource of a mapped graphics resource." shape="rect">cudaGraphicsSubResourceGetMappedArray</a>, <a class="xref" href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1gc4dcf300df27f8cf51a89f0287b07861" title="Unmap graphics resources." shape="rect">cudaGraphicsUnmapResources</a></p>
+                              <p class="p"></p>
+                           </div>
+                        </dd>
+                        <dt class="description"><a name="group__CUDART__INTEROP_1g2e065be078849f1da2cc485788110307" id="group__CUDART__INTEROP_1g2e065be078849f1da2cc485788110307" shape="rect">
+                              <!-- --></a><span><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a> cudaGraphicsResourceGetMappedMipmappedArray (  <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1g1b03ad14fc0ab86f8b033837f5562d8a" title="" shape="rect">cudaMipmappedArray_t</a>*<span>&nbsp;</span><span class="keyword keyword apiItemName">mipmappedArray</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">resource</span> ) </span></dt>
+                        <dd class="description">
+                           <div class="section">Get a mipmapped array through which to access a mapped graphics resource. </div>
+                           <div class="section">
+                              <h6 class="parameter_header">
+                                 Parameters
+                                 
+                              </h6>
+                              <dl class="table-display-params">
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">mipmappedArray</span></tt></dt>
+                                 <dd>- Returned mipmapped array through which <tt class="ph tt code">resource</tt> may be accessed 
+                                 </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">resource</span></tt></dt>
+                                 <dd>- Mapped resource to access</dd>
+                              </dl>
+                           </div>
+                           <div class="section">
+                              <h6 class="return_header">Returns</h6>
+                              <p class="return"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038e355f04607d824883b4a50662830d591" shape="rect">cudaSuccess</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00383e8aef5398ee38e28ed41e357b48917c" shape="rect">cudaErrorInvalidValue</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038c4673247aee4d1ab8d07871f376e0273" shape="rect">cudaErrorInvalidResourceHandle</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a></p>
+                           </div>
+                           <div class="section">
+                              <h6 class="description_header">Description</h6>
+                              <p>Returns in <tt class="ph tt code">*mipmappedArray</tt> a mipmapped array through which the mapped graphics resource <tt class="ph tt code">resource</tt> may be accessed. The value set in <tt class="ph tt code">mipmappedArray</tt> may change every time that <tt class="ph tt code">resource</tt> is mapped.
+                              </p>
+                              <p class="p">If <tt class="ph tt code">resource</tt> is not a texture then it cannot be accessed via an array and <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a> is returned. If <tt class="ph tt code">resource</tt> is not mapped then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a> is returned.
+                              </p>
+                              <p class="p"></p>
+                              <p class="p"></p>
+                              <p class="p">
+                                 <div class="note note"><span class="notetitle">Note:</span><p class="p">Note that this function may also return error codes from previous, asynchronous launches.</p>
+                                 </div>
+                              </p>
+                              <p class="p"></p>
+                              <p class="p apiDesc_subtitle"><strong class="ph b">See also:</strong></p>
+                              <p class="p see_subsection"><a class="xref" href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1ge7f893864a3d38a630e71a99f5a4e17f" title="Get an device pointer through which to access a mapped graphics resource." shape="rect">cudaGraphicsResourceGetMappedPointer</a></p>
+                              <p class="p"></p>
+                           </div>
+                        </dd>
+                        <dt class="description"><a name="group__CUDART__INTEROP_1ge7f893864a3d38a630e71a99f5a4e17f" id="group__CUDART__INTEROP_1ge7f893864a3d38a630e71a99f5a4e17f" shape="rect">
+                              <!-- --></a><span><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a> cudaGraphicsResourceGetMappedPointer (  void**<span>&nbsp;</span><span class="keyword keyword apiItemName">devPtr</span>, size_t*<span>&nbsp;</span><span class="keyword keyword apiItemName">size</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">resource</span> ) </span></dt>
+                        <dd class="description">
+                           <div class="section">Get an device pointer through which to access a mapped graphics resource. </div>
+                           <div class="section">
+                              <h6 class="parameter_header">
+                                 Parameters
+                                 
+                              </h6>
+                              <dl class="table-display-params">
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">devPtr</span></tt></dt>
+                                 <dd>- Returned pointer through which <tt class="ph tt code">resource</tt> may be accessed 
+                                 </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">size</span></tt></dt>
+                                 <dd>- Returned size of the buffer accessible starting at <tt class="ph tt code">*devPtr</tt></dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">resource</span></tt></dt>
+                                 <dd>- Mapped resource to access</dd>
+                              </dl>
+                           </div>
+                           <div class="section">
+                              <h6 class="return_header">Returns</h6>
+                              <p class="return"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038e355f04607d824883b4a50662830d591" shape="rect">cudaSuccess</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00383e8aef5398ee38e28ed41e357b48917c" shape="rect">cudaErrorInvalidValue</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038c4673247aee4d1ab8d07871f376e0273" shape="rect">cudaErrorInvalidResourceHandle</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a></p>
+                           </div>
+                           <div class="section">
+                              <h6 class="description_header">Description</h6>
+                              <p>Returns in <tt class="ph tt code">*devPtr</tt> a pointer through which the mapped graphics resource <tt class="ph tt code">resource</tt> may be accessed. Returns in <tt class="ph tt code">*size</tt> the size of the memory in bytes which may be accessed from that pointer. The value set in <tt class="ph tt code">devPtr</tt> may change every time that <tt class="ph tt code">resource</tt> is mapped.
+                              </p>
+                              <p class="p">If <tt class="ph tt code">resource</tt> is not a buffer then it cannot be accessed via a pointer and <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a> is returned. If <tt class="ph tt code">resource</tt> is not mapped then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a> is returned. * 
+                                 
+                              </p>
+                              <p class="p"></p>
+                              <p class="p">
+                                 <div class="note note"><span class="notetitle">Note:</span><p class="p">Note that this function may also return error codes from previous, asynchronous launches.</p>
+                                 </div>
+                              </p>
+                              <p class="p"></p>
+                              <p class="p apiDesc_subtitle"><strong class="ph b">See also:</strong></p>
+                              <p class="p see_subsection"><a class="xref" href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1gb7064fb72e54d89d0666e192b45d35cc" title="Map graphics resources for access by CUDA." shape="rect">cudaGraphicsMapResources</a>, <a class="xref" href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1gfc796cc80e7a054b13d90afde659546e" title="Get an array through which to access a subresource of a mapped graphics resource." shape="rect">cudaGraphicsSubResourceGetMappedArray</a></p>
+                              <p class="p"></p>
+                           </div>
+                        </dd>
+                        <dt class="description"><a name="group__CUDART__INTEROP_1g4b7e5e82663df019a4bcf03d50835465" id="group__CUDART__INTEROP_1g4b7e5e82663df019a4bcf03d50835465" shape="rect">
+                              <!-- --></a><span><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a> cudaGraphicsResourceSetMapFlags (  <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">resource</span>, unsigned int <span>&nbsp;</span><span class="keyword keyword apiItemName">flags</span> ) </span></dt>
+                        <dd class="description">
+                           <div class="section">Set usage flags for mapping a graphics resource. </div>
+                           <div class="section">
+                              <h6 class="parameter_header">
+                                 Parameters
+                                 
+                              </h6>
+                              <dl class="table-display-params">
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">resource</span></tt></dt>
+                                 <dd>- Registered resource to set flags for </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">flags</span></tt></dt>
+                                 <dd>- Parameters for resource mapping</dd>
+                              </dl>
+                           </div>
+                           <div class="section">
+                              <h6 class="return_header">Returns</h6>
+                              <p class="return"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038e355f04607d824883b4a50662830d591" shape="rect">cudaSuccess</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00383e8aef5398ee38e28ed41e357b48917c" shape="rect">cudaErrorInvalidValue</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038c4673247aee4d1ab8d07871f376e0273" shape="rect">cudaErrorInvalidResourceHandle</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a>, 
+                              </p>
+                           </div>
+                           <div class="section">
+                              <h6 class="description_header">Description</h6>
+                              <p>Set <tt class="ph tt code">flags</tt> for mapping the graphics resource <tt class="ph tt code">resource</tt>.
+                              </p>
+                              <p class="p">Changes to <tt class="ph tt code">flags</tt> will take effect the next time <tt class="ph tt code">resource</tt> is mapped. The <tt class="ph tt code">flags</tt> argument may be any of the following:
+                                 <ul class="ul">
+                                    <li class="li">
+                                       <p class="p"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg2c3c3a69caaf333d29d0b38b75de5ffd81ae074138583e9421692bec52bfe44b" shape="rect">cudaGraphicsMapFlagsNone</a>: Specifies no hints about how <tt class="ph tt code">resource</tt> will be used. It is therefore assumed that CUDA may read from or write to <tt class="ph tt code">resource</tt>.
+                                       </p>
+                                    </li>
+                                    <li class="li">
+                                       <p class="p"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg2c3c3a69caaf333d29d0b38b75de5ffde34096084cfafea1399b5682efd8b74c" shape="rect">cudaGraphicsMapFlagsReadOnly</a>: Specifies that CUDA will not write to <tt class="ph tt code">resource</tt>.
+                                       </p>
+                                    </li>
+                                    <li class="li">
+                                       <p class="p"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg2c3c3a69caaf333d29d0b38b75de5ffd3d4fa7699e964ffc201daac20d2ecd6b" shape="rect">cudaGraphicsMapFlagsWriteDiscard</a>: Specifies CUDA will not read from <tt class="ph tt code">resource</tt> and will write over the entire contents of <tt class="ph tt code">resource</tt>, so none of the data previously stored in <tt class="ph tt code">resource</tt> will be preserved.
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </p>
+                              <p class="p">If <tt class="ph tt code">resource</tt> is presently mapped for access by CUDA then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a> is returned. If <tt class="ph tt code">flags</tt> is not one of the above values then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00383e8aef5398ee38e28ed41e357b48917c" shape="rect">cudaErrorInvalidValue</a> is returned.
+                              </p>
+                              <p class="p"></p>
+                              <p class="p"></p>
+                              <p class="p">
+                                 <div class="note note"><span class="notetitle">Note:</span><p class="p">Note that this function may also return error codes from previous, asynchronous launches.</p>
+                                 </div>
+                              </p>
+                              <p class="p"></p>
+                              <p class="p apiDesc_subtitle"><strong class="ph b">See also:</strong></p>
+                              <p class="p see_subsection"><a class="xref" href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1gb7064fb72e54d89d0666e192b45d35cc" title="Map graphics resources for access by CUDA." shape="rect">cudaGraphicsMapResources</a></p>
+                              <p class="p"></p>
+                           </div>
+                        </dd>
+                        <dt class="description"><a name="group__CUDART__INTEROP_1gfc796cc80e7a054b13d90afde659546e" id="group__CUDART__INTEROP_1gfc796cc80e7a054b13d90afde659546e" shape="rect">
+                              <!-- --></a><span><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a> cudaGraphicsSubResourceGetMappedArray (  <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gaf8b3ba752727d996074a71ee997ce68" title="" shape="rect">cudaArray_t</a>*<span>&nbsp;</span><span class="keyword keyword apiItemName">array</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">resource</span>, unsigned int <span>&nbsp;</span><span class="keyword keyword apiItemName">arrayIndex</span>, unsigned int <span>&nbsp;</span><span class="keyword keyword apiItemName">mipLevel</span> ) </span></dt>
+                        <dd class="description">
+                           <div class="section">Get an array through which to access a subresource of a mapped graphics resource. </div>
+                           <div class="section">
+                              <h6 class="parameter_header">
+                                 Parameters
+                                 
+                              </h6>
+                              <dl class="table-display-params">
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">array</span></tt></dt>
+                                 <dd>- Returned array through which a subresource of <tt class="ph tt code">resource</tt> may be accessed 
+                                 </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">resource</span></tt></dt>
+                                 <dd>- Mapped resource to access </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">arrayIndex</span></tt></dt>
+                                 <dd>- Array index for array textures or cubemap face index as defined by <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gbf3ce16a621826a09263b8a58902fee8" shape="rect">cudaGraphicsCubeFace</a> for cubemap textures for the subresource to access 
+                                 </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">mipLevel</span></tt></dt>
+                                 <dd>- Mipmap level for the subresource to access</dd>
+                              </dl>
+                           </div>
+                           <div class="section">
+                              <h6 class="return_header">Returns</h6>
+                              <p class="return"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038e355f04607d824883b4a50662830d591" shape="rect">cudaSuccess</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00383e8aef5398ee38e28ed41e357b48917c" shape="rect">cudaErrorInvalidValue</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038c4673247aee4d1ab8d07871f376e0273" shape="rect">cudaErrorInvalidResourceHandle</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a></p>
+                           </div>
+                           <div class="section">
+                              <h6 class="description_header">Description</h6>
+                              <p>Returns in <tt class="ph tt code">*array</tt> an array through which the subresource of the mapped graphics resource <tt class="ph tt code">resource</tt> which corresponds to array index <tt class="ph tt code">arrayIndex</tt> and mipmap level <tt class="ph tt code">mipLevel</tt> may be accessed. The value set in <tt class="ph tt code">array</tt> may change every time that <tt class="ph tt code">resource</tt> is mapped.
+                              </p>
+                              <p class="p">If <tt class="ph tt code">resource</tt> is not a texture then it cannot be accessed via an array and <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a> is returned. If <tt class="ph tt code">arrayIndex</tt> is not a valid array index for <tt class="ph tt code">resource</tt> then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00383e8aef5398ee38e28ed41e357b48917c" shape="rect">cudaErrorInvalidValue</a> is returned. If <tt class="ph tt code">mipLevel</tt> is not a valid mipmap level for <tt class="ph tt code">resource</tt> then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00383e8aef5398ee38e28ed41e357b48917c" shape="rect">cudaErrorInvalidValue</a> is returned. If <tt class="ph tt code">resource</tt> is not mapped then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a> is returned.
+                              </p>
+                              <p class="p"></p>
+                              <p class="p"></p>
+                              <p class="p">
+                                 <div class="note note"><span class="notetitle">Note:</span><p class="p">Note that this function may also return error codes from previous, asynchronous launches.</p>
+                                 </div>
+                              </p>
+                              <p class="p"></p>
+                              <p class="p apiDesc_subtitle"><strong class="ph b">See also:</strong></p>
+                              <p class="p see_subsection"><a class="xref" href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1ge7f893864a3d38a630e71a99f5a4e17f" title="Get an device pointer through which to access a mapped graphics resource." shape="rect">cudaGraphicsResourceGetMappedPointer</a></p>
+                              <p class="p"></p>
+                           </div>
+                        </dd>
+                        <dt class="description"><a name="group__CUDART__INTEROP_1gc4dcf300df27f8cf51a89f0287b07861" id="group__CUDART__INTEROP_1gc4dcf300df27f8cf51a89f0287b07861" shape="rect">
+                              <!-- --></a><span><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a> cudaGraphicsUnmapResources (  int <span>&nbsp;</span><span class="keyword keyword apiItemName">count</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a>*<span>&nbsp;</span><span class="keyword keyword apiItemName">resources</span>, <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1ge15d9c8b7a240312b533d6122558085a" title="" shape="rect">cudaStream_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">stream</span> = <span class="ph ph apiData">0</span> ) </span></dt>
+                        <dd class="description">
+                           <div class="section">Unmap graphics resources. </div>
+                           <div class="section">
+                              <h6 class="parameter_header">
+                                 Parameters
+                                 
+                              </h6>
+                              <dl class="table-display-params">
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">count</span></tt></dt>
+                                 <dd>- Number of resources to unmap </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">resources</span></tt></dt>
+                                 <dd>- Resources to unmap </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">stream</span></tt></dt>
+                                 <dd>- Stream for synchronization</dd>
+                              </dl>
+                           </div>
+                           <div class="section">
+                              <h6 class="return_header">Returns</h6>
+                              <p class="return"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038e355f04607d824883b4a50662830d591" shape="rect">cudaSuccess</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038c4673247aee4d1ab8d07871f376e0273" shape="rect">cudaErrorInvalidResourceHandle</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a></p>
+                           </div>
+                           <div class="section">
+                              <h6 class="description_header">Description</h6>
+                              <p>Unmaps the <tt class="ph tt code">count</tt> graphics resources in <tt class="ph tt code">resources</tt>.
+                              </p>
+                              <p class="p">Once unmapped, the resources in <tt class="ph tt code">resources</tt> may not be accessed by CUDA until they are mapped again.
+                              </p>
+                              <p class="p">This function provides the synchronization guarantee that any CUDA work issued in <tt class="ph tt code">stream</tt> before <a class="xref" href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1gc4dcf300df27f8cf51a89f0287b07861" title="Unmap graphics resources." shape="rect">cudaGraphicsUnmapResources()</a> will complete before any subsequently issued graphics work begins.
+                              </p>
+                              <p class="p">If <tt class="ph tt code">resources</tt> contains any duplicate entries then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038c4673247aee4d1ab8d07871f376e0273" shape="rect">cudaErrorInvalidResourceHandle</a> is returned. If any of <tt class="ph tt code">resources</tt> are not presently mapped for access by CUDA then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a> is returned.
+                              </p>
+                              <p class="p"></p>
+                              <p class="p"></p>
+                              <p class="p">
+                                 <div class="note note"><span class="notetitle">Note:</span><ul class="ul">
+                                       <li class="li">
+                                          <p class="p">This function uses standard  <a class="xref xmlonly" href="stream-sync-behavior.html#stream-sync-behavior__null-stream" shape="rect">NULL stream</a> semantics. 
+                                          </p>
+                                       </li>
+                                       <li class="li">
+                                          <p class="p">Note that this function may also return error codes from previous, asynchronous launches.</p>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </p>
+                              <p class="p"></p>
+                              <p class="p apiDesc_subtitle"><strong class="ph b">See also:</strong></p>
+                              <p class="p see_subsection"><a class="xref" href="group__CUDART__INTEROP.html#group__CUDART__INTEROP_1gb7064fb72e54d89d0666e192b45d35cc" title="Map graphics resources for access by CUDA." shape="rect">cudaGraphicsMapResources</a></p>
+                              <p class="p"></p>
+                           </div>
+                        </dd>
+                        <dt class="description"><a name="group__CUDART__INTEROP_1g1d45ac44d1affe17fb356e0b7a0b0560" id="group__CUDART__INTEROP_1g1d45ac44d1affe17fb356e0b7a0b0560" shape="rect">
+                              <!-- --></a><span><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a> cudaGraphicsUnregisterResource (  <a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf58dd8d3c7a65714ff7f5459adbf7e6f" title="" shape="rect">cudaGraphicsResource_t</a><span>&nbsp;</span><span class="keyword keyword apiItemName">resource</span> ) </span></dt>
+                        <dd class="description">
+                           <div class="section">Unregisters a graphics resource for access by CUDA. </div>
+                           <div class="section">
+                              <h6 class="parameter_header">
+                                 Parameters
+                                 
+                              </h6>
+                              <dl class="table-display-params">
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">resource</span></tt></dt>
+                                 <dd>- Resource to unregister</dd>
+                              </dl>
+                           </div>
+                           <div class="section">
+                              <h6 class="return_header">Returns</h6>
+                              <p class="return"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038e355f04607d824883b4a50662830d591" shape="rect">cudaSuccess</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038c4673247aee4d1ab8d07871f376e0273" shape="rect">cudaErrorInvalidResourceHandle</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00382e491daacef266c7b3e3c1e140a6133c" shape="rect">cudaErrorUnknown</a></p>
+                           </div>
+                           <div class="section">
+                              <h6 class="description_header">Description</h6>
+                              <p>Unregisters the graphics resource <tt class="ph tt code">resource</tt> so it is not accessible by CUDA unless registered again.
+                              </p>
+                              <p class="p">If <tt class="ph tt code">resource</tt> is invalid then <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038c4673247aee4d1ab8d07871f376e0273" shape="rect">cudaErrorInvalidResourceHandle</a> is returned.
+                              </p>
+                              <p class="p"></p>
+                              <p class="p"></p>
+                              <p class="p">
+                                 <div class="note note"><span class="notetitle">Note:</span><p class="p">Note that this function may also return error codes from previous, asynchronous launches.</p>
+                                 </div>
+                              </p>
+                              <p class="p"></p>
+                              <p class="p apiDesc_subtitle"><strong class="ph b">See also:</strong></p>
+                              <p class="p see_subsection"><a class="xref" href="group__CUDART__D3D9.html#group__CUDART__D3D9_1gbe1082b566be4ab414bf69047449ad93" title="Register a Direct3D 9 resource for access by CUDA." shape="rect">cudaGraphicsD3D9RegisterResource</a>, <a class="xref" href="group__CUDART__D3D10.html#group__CUDART__D3D10_1g6b09dce4d78b948477dd5c451a2725fa" title="Registers a Direct3D 10 resource for access by CUDA." shape="rect">cudaGraphicsD3D10RegisterResource</a>, <a class="xref" href="group__CUDART__D3D11.html#group__CUDART__D3D11_1gf0545f2dd459ba49cfd6bcf2741c5ebd" title="Register a Direct3D 11 resource for access by CUDA." shape="rect">cudaGraphicsD3D11RegisterResource</a>, <a class="xref" href="group__CUDART__OPENGL.html#group__CUDART__OPENGL_1g43f69a041bdfa4f8b36aff99bf0171db" title="Registers an OpenGL buffer object." shape="rect">cudaGraphicsGLRegisterBuffer</a>, <a class="xref" href="group__CUDART__OPENGL.html#group__CUDART__OPENGL_1gd7be3ca8a7a739d57f0b558562c5706e" title="Register an OpenGL texture or renderbuffer object." shape="rect">cudaGraphicsGLRegisterImage</a></p>
+                              <p class="p"></p>
+                           </div>
+                        </dd>
+                     </dl>
+                  </div>
+               </div>
+               
+               <hr id="contents-end"></hr>
+               
+            </article>
+         </div>
+      </div>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/formatting/common.min.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/omniture/s_code_us_dev_aut1-nolinktrackin.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/omniture/omniture.js"></script>
+      <noscript><a href="http://www.omniture.com" title="Web Analytics"><img src="http://omniture.nvidia.com/b/ss/nvidiacudadocs/1/H.17--NS/0" height="1" width="1" border="0" alt=""></img></a></noscript>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-write.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-tracker.js"></script>
+      <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher: "998dc202-a267-4d8e-bce9-14debadb8d92", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script></body>
+</html>

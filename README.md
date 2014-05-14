@@ -3,6 +3,8 @@
 
 [CUDA](http://www.nvidia.com/object/cuda_home_new.html) documentation for Dash
 
+#### Docset unusable for the time being. 
+
 This docset is to be used with [Dash for Mac](http://kapeli.com/dash), or [Zeal docs]( http://zealdocs.org) (which is available for Windows and many Linux distros).
 
 

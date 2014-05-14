@@ -1,0 +1,387 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+      <meta name="copyright" content="(C) Copyright 2005"></meta>
+      <meta name="DC.rights.owner" content="(C) Copyright 2005"></meta>
+      <meta name="DC.Type" content="cppModule"></meta>
+      <meta name="DC.Title" content="Peer Device Memory Access"></meta>
+      <meta name="abstract" content=""></meta>
+      <meta name="description" content=""></meta>
+      <meta name="DC.Format" content="XHTML"></meta>
+      <meta name="DC.Identifier" content="group__CUDART__PEER"></meta>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/commonltr.css"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/site.css"></link>
+      <title>CUDA Runtime API :: CUDA Toolkit Documentation</title>
+      <!--[if lt IE 9]>
+      <script src="../common/formatting/html5shiv-printshiv.min.js"></script>
+      <![endif]-->
+      <script type="text/javascript" charset="utf-8" src="../common/scripts/tynt/tynt.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.ba-hashchange.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="../common/formatting/jquery.scrollintoview.min.js"></script>
+      <script type="text/javascript" src="../search/htmlFileList.js"></script>
+      <script type="text/javascript" src="../search/htmlFileInfoList.js"></script>
+      <script type="text/javascript" src="../search/nwSearchFnt.min.js"></script>
+      <script type="text/javascript" src="../search/stemmers/en_stemmer.min.js"></script>
+      <script type="text/javascript" src="../search/index-1.js"></script>
+      <script type="text/javascript" src="../search/index-2.js"></script>
+      <script type="text/javascript" src="../search/index-3.js"></script>
+      <link rel="canonical" href="index.html"></link>
+      <link rel="stylesheet" type="text/css" href="../common/formatting/qwcode.highlight.css"></link>
+   </head>
+   <body>
+      
+      <header id="header"><span id="company">NVIDIA</span><span id="site-title">CUDA Toolkit Documentation</span><form id="search" method="get" action="http://docs.nvidia.com/cuda/cuda-runtime-api/search">
+            <input type="text" name="search-text"></input><fieldset id="search-location">
+               <legend>Search In:</legend>
+               <label><input type="radio" name="search-type" value="site"></input>Entire Site</label>
+               <label><input type="radio" name="search-type" value="document"></input>Just This Document</label></fieldset>
+            <button type="reset">clear search</button>
+            <button id="submit" type="submit">search</button></form>
+      </header>
+      <div id="site-content">
+         <nav id="site-nav">
+            <div class="category closed"><a href="http://docs.nvidia.com/cuda/index.html" title="The root of the site.">CUDA Toolkit
+                  v6.0</a></div>
+            <div class="category"><a href="index.html" title="CUDA Runtime API">CUDA Runtime API</a></div>
+            <ul>
+               <li>
+                  <div class="section-link"><a href="api-sync-behavior.html#api-sync-behavior">1.&nbsp;API synchronization behavior </a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="stream-sync-behavior.html#stream-sync-behavior">2.&nbsp;Stream synchronization behavior</a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="modules.html#modules">3.&nbsp;Modules</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__DEVICE.html#group__CUDART__DEVICE">3.1.&nbsp;Device Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__THREAD__DEPRECATED.html#group__CUDART__THREAD__DEPRECATED">3.2.&nbsp;Thread Management [DEPRECATED]</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__ERROR.html#group__CUDART__ERROR">3.3.&nbsp;Error Handling</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__STREAM.html#group__CUDART__STREAM">3.4.&nbsp;Stream Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__EVENT.html#group__CUDART__EVENT">3.5.&nbsp;Event Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__EXECUTION.html#group__CUDART__EXECUTION">3.6.&nbsp;Execution Control</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__MEMORY.html#group__CUDART__MEMORY">3.7.&nbsp;Memory Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__UNIFIED.html#group__CUDART__UNIFIED">3.8.&nbsp;Unified Addressing</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__PEER.html#group__CUDART__PEER">3.9.&nbsp;Peer Device Memory Access</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__OPENGL.html#group__CUDART__OPENGL">3.10.&nbsp;OpenGL Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__OPENGL__DEPRECATED.html#group__CUDART__OPENGL__DEPRECATED">3.11.&nbsp;OpenGL Interoperability [DEPRECATED]</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D9.html#group__CUDART__D3D9">3.12.&nbsp;Direct3D 9 Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D9__DEPRECATED.html#group__CUDART__D3D9__DEPRECATED">3.13.&nbsp;Direct3D 9 Interoperability [DEPRECATED]</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D10.html#group__CUDART__D3D10">3.14.&nbsp;Direct3D 10 Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D10__DEPRECATED.html#group__CUDART__D3D10__DEPRECATED">3.15.&nbsp;Direct3D 10 Interoperability [DEPRECATED]</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D11.html#group__CUDART__D3D11">3.16.&nbsp;Direct3D 11 Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__D3D11__DEPRECATED.html#group__CUDART__D3D11__DEPRECATED">3.17.&nbsp;Direct3D 11 Interoperability [DEPRECATED]</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__VDPAU.html#group__CUDART__VDPAU">3.18.&nbsp;VDPAU Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__INTEROP.html#group__CUDART__INTEROP">3.19.&nbsp;Graphics Interoperability</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__TEXTURE.html#group__CUDART__TEXTURE">3.20.&nbsp;Texture Reference Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__SURFACE.html#group__CUDART__SURFACE">3.21.&nbsp;Surface Reference Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__TEXTURE__OBJECT.html#group__CUDART__TEXTURE__OBJECT">3.22.&nbsp;Texture Object Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__SURFACE__OBJECT.html#group__CUDART__SURFACE__OBJECT">3.23.&nbsp;Surface Object Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART____VERSION.html#group__CUDART____VERSION">3.24.&nbsp;Version Management</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__HIGHLEVEL.html#group__CUDART__HIGHLEVEL">3.25.&nbsp;C++ API Routines</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__DRIVER.html#group__CUDART__DRIVER">3.26.&nbsp;Interactions with the CUDA Driver API</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__PROFILER.html#group__CUDART__PROFILER">3.27.&nbsp;Profiler Control</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES">3.28.&nbsp;Data types used by CUDA Runtime</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="annotated.html#annotated">4.&nbsp;Data Structures</a></div>
+                  <ul>
+                     <li>
+                        <div class="section-link"><a href="structcudaChannelFormatDesc.html#structcudaChannelFormatDesc">4.1.&nbsp;cudaChannelFormatDesc</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaDeviceProp.html#structcudaDeviceProp">4.2.&nbsp;cudaDeviceProp</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaExtent.html#structcudaExtent">4.3.&nbsp;cudaExtent</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaFuncAttributes.html#structcudaFuncAttributes">4.4.&nbsp;cudaFuncAttributes</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaIpcEventHandle__t.html#structcudaIpcEventHandle__t">4.5.&nbsp;cudaIpcEventHandle_t</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaIpcMemHandle__t.html#structcudaIpcMemHandle__t">4.6.&nbsp;cudaIpcMemHandle_t</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaMemcpy3DParms.html#structcudaMemcpy3DParms">4.7.&nbsp;cudaMemcpy3DParms</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaMemcpy3DPeerParms.html#structcudaMemcpy3DPeerParms">4.8.&nbsp;cudaMemcpy3DPeerParms</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaPitchedPtr.html#structcudaPitchedPtr">4.9.&nbsp;cudaPitchedPtr</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaPointerAttributes.html#structcudaPointerAttributes">4.10.&nbsp;cudaPointerAttributes</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaPos.html#structcudaPos">4.11.&nbsp;cudaPos</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaResourceDesc.html#structcudaResourceDesc">4.12.&nbsp;cudaResourceDesc</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaResourceViewDesc.html#structcudaResourceViewDesc">4.13.&nbsp;cudaResourceViewDesc</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structcudaTextureDesc.html#structcudaTextureDesc">4.14.&nbsp;cudaTextureDesc</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structsurfaceReference.html#structsurfaceReference">4.15.&nbsp;surfaceReference</a></div>
+                     </li>
+                     <li>
+                        <div class="section-link"><a href="structtextureReference.html#structtextureReference">4.16.&nbsp;textureReference</a></div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <div class="section-link"><a href="functions.html#functions">5.&nbsp;Data Fields</a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="deprecated.html#deprecated">6.&nbsp;Deprecated List</a></div>
+               </li>
+               <li>
+                  <div class="section-link"><a href="notices-header.html#notices-header">Notices</a></div>
+                  <ul></ul>
+               </li>
+            </ul>
+         </nav>
+         <div id="resize-nav"></div>
+         <nav id="search-results">
+            <h2>Search Results</h2>
+            <ol></ol>
+         </nav>
+         
+         <div id="contents-container">
+            <div id="breadcrumbs-container">
+               <div id="breadcrumbs"><a href="group__CUDART__UNIFIED.html" shape="rect">&lt; Previous</a> | <a href="group__CUDART__OPENGL.html" shape="rect">Next &gt;</a></div>
+               <div id="release-info">CUDA Runtime API
+                  (<a href="http://docs.nvidia.com/cuda/pdf/CUDA_Runtime_API.pdf">PDF</a>)
+                  -
+                  
+                  v6.0
+                  (<a href="https://developer.nvidia.com/cuda-toolkit-archive">older</a>)
+                  -
+                  Last updated February 13, 2014
+                  -
+                  <a href="mailto:cudatools@nvidia.com?subject=CUDA Toolkit Documentation Feedback: CUDA Runtime API">Send Feedback</a>
+                  -
+                  <span class="st_facebook"></span><span class="st_twitter"></span><span class="st_linkedin"></span><span class="st_reddit"></span><span class="st_slashdot"></span><span class="st_tumblr"></span><span class="st_sharethis"></span></div>
+            </div>
+            <article id="contents">
+               <div class="topic reference apiRef apiPackage cppModule" id="group__CUDART__PEER"><a name="group__CUDART__PEER" shape="rect">
+                     <!-- --></a><h2 class="topictitle2 cppModule">3.9.&nbsp;Peer Device Memory Access</h2>
+                  <div class="section">
+                     <p>This section describes the peer device memory access functions of the CUDA runtime application programming interface. </p>
+                  </div>
+                  <h3 class="fake_sectiontitle member_header">Functions</h3>
+                  <dl class="members">
+                     <dt><span class="member_type"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a>&nbsp;</span><span class="member_name"><a href="group__CUDART__PEER.html#group__CUDART__PEER_1gbc095a10a4d953e972ef918997c5e567" shape="rect">cudaDeviceCanAccessPeer</a> (  int*<span>&nbsp;</span><span class="keyword keyword apiItemName">canAccessPeer</span>, int <span>&nbsp;</span><span class="keyword keyword apiItemName">device</span>, int <span>&nbsp;</span><span class="keyword keyword apiItemName">peerDevice</span> ) </span></dt>
+                     <dd class="shortdesc"><span></span><span class="desc">Queries if a device may directly access a peer device's memory. </span></dd>
+                     <dt><span class="member_type"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a>&nbsp;</span><span class="member_name"><a href="group__CUDART__PEER.html#group__CUDART__PEER_1gae24fc50bd0f1ce7f69032f91bde87ac" shape="rect">cudaDeviceDisablePeerAccess</a> (  int <span>&nbsp;</span><span class="keyword keyword apiItemName">peerDevice</span> ) </span></dt>
+                     <dd class="shortdesc"><span></span><span class="desc">Disables direct access to memory allocations on a peer device. </span></dd>
+                     <dt><span class="member_type"><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a>&nbsp;</span><span class="member_name"><a href="group__CUDART__PEER.html#group__CUDART__PEER_1g9e5ea65a18938c2b8715a5602105c306" shape="rect">cudaDeviceEnablePeerAccess</a> (  int <span>&nbsp;</span><span class="keyword keyword apiItemName">peerDevice</span>, unsigned int <span>&nbsp;</span><span class="keyword keyword apiItemName">flags</span> ) </span></dt>
+                     <dd class="shortdesc"><span></span><span class="desc">Enables direct access to memory allocations on a peer device. </span></dd>
+                  </dl>
+                  <div class="description">
+                     <h3 class="sectiontitle">Functions</h3>
+                     <dl class="description">
+                        <dt class="description"><a name="group__CUDART__PEER_1gbc095a10a4d953e972ef918997c5e567" id="group__CUDART__PEER_1gbc095a10a4d953e972ef918997c5e567" shape="rect">
+                              <!-- --></a><span><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a> cudaDeviceCanAccessPeer (  int*<span>&nbsp;</span><span class="keyword keyword apiItemName">canAccessPeer</span>, int <span>&nbsp;</span><span class="keyword keyword apiItemName">device</span>, int <span>&nbsp;</span><span class="keyword keyword apiItemName">peerDevice</span> ) </span></dt>
+                        <dd class="description">
+                           <div class="section">Queries if a device may directly access a peer device's memory. </div>
+                           <div class="section">
+                              <h6 class="parameter_header">
+                                 Parameters
+                                 
+                              </h6>
+                              <dl class="table-display-params">
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">canAccessPeer</span></tt></dt>
+                                 <dd>- Returned access capability </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">device</span></tt></dt>
+                                 <dd>- Device from which allocations on <tt class="ph tt code">peerDevice</tt> are to be directly accessed. 
+                                 </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">peerDevice</span></tt></dt>
+                                 <dd>- Device on which the allocations to be directly accessed by <tt class="ph tt code">device</tt> reside.
+                                 </dd>
+                              </dl>
+                           </div>
+                           <div class="section">
+                              <h6 class="return_header">Returns</h6>
+                              <p class="return"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038e355f04607d824883b4a50662830d591" shape="rect">cudaSuccess</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038938c6e8b96ecde62e3ab5137156f739a" shape="rect">cudaErrorInvalidDevice</a></p>
+                           </div>
+                           <div class="section">
+                              <h6 class="description_header">Description</h6>
+                              <p>Returns in <tt class="ph tt code">*canAccessPeer</tt> a value of 1 if device <tt class="ph tt code">device</tt> is capable of directly accessing memory from <tt class="ph tt code">peerDevice</tt> and 0 otherwise. If direct access of <tt class="ph tt code">peerDevice</tt> from <tt class="ph tt code">device</tt> is possible, then access may be enabled by calling <a class="xref" href="group__CUDART__PEER.html#group__CUDART__PEER_1g9e5ea65a18938c2b8715a5602105c306" title="Enables direct access to memory allocations on a peer device." shape="rect">cudaDeviceEnablePeerAccess()</a>.
+                              </p>
+                              <p class="p"></p>
+                              <p class="p"></p>
+                              <p class="p">
+                                 <div class="note note"><span class="notetitle">Note:</span><p class="p">Note that this function may also return error codes from previous, asynchronous launches.</p>
+                                 </div>
+                              </p>
+                              <p class="p"></p>
+                              <p class="p apiDesc_subtitle"><strong class="ph b">See also:</strong></p>
+                              <p class="p see_subsection"><a class="xref" href="group__CUDART__PEER.html#group__CUDART__PEER_1g9e5ea65a18938c2b8715a5602105c306" title="Enables direct access to memory allocations on a peer device." shape="rect">cudaDeviceEnablePeerAccess</a>, <a class="xref" href="group__CUDART__PEER.html#group__CUDART__PEER_1gae24fc50bd0f1ce7f69032f91bde87ac" title="Disables direct access to memory allocations on a peer device." shape="rect">cudaDeviceDisablePeerAccess</a></p>
+                              <p class="p"></p>
+                           </div>
+                        </dd>
+                        <dt class="description"><a name="group__CUDART__PEER_1gae24fc50bd0f1ce7f69032f91bde87ac" id="group__CUDART__PEER_1gae24fc50bd0f1ce7f69032f91bde87ac" shape="rect">
+                              <!-- --></a><span><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a> cudaDeviceDisablePeerAccess (  int <span>&nbsp;</span><span class="keyword keyword apiItemName">peerDevice</span> ) </span></dt>
+                        <dd class="description">
+                           <div class="section">Disables direct access to memory allocations on a peer device. </div>
+                           <div class="section">
+                              <h6 class="parameter_header">
+                                 Parameters
+                                 
+                              </h6>
+                              <dl class="table-display-params">
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">peerDevice</span></tt></dt>
+                                 <dd>- Peer device to disable direct access to</dd>
+                              </dl>
+                           </div>
+                           <div class="section">
+                              <h6 class="return_header">Returns</h6>
+                              <p class="return"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038e355f04607d824883b4a50662830d591" shape="rect">cudaSuccess</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038821b54bce59b87db6efc2ea59a867bf7" shape="rect">cudaErrorPeerAccessNotEnabled</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038938c6e8b96ecde62e3ab5137156f739a" shape="rect">cudaErrorInvalidDevice</a></p>
+                           </div>
+                           <div class="section">
+                              <h6 class="description_header">Description</h6>
+                              <p>Returns <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038821b54bce59b87db6efc2ea59a867bf7" shape="rect">cudaErrorPeerAccessNotEnabled</a> if direct access to memory on <tt class="ph tt code">peerDevice</tt> has not yet been enabled from the current device.
+                              </p>
+                              <p class="p"></p>
+                              <p class="p"></p>
+                              <p class="p">
+                                 <div class="note note"><span class="notetitle">Note:</span><p class="p">Note that this function may also return error codes from previous, asynchronous launches.</p>
+                                 </div>
+                              </p>
+                              <p class="p"></p>
+                              <p class="p apiDesc_subtitle"><strong class="ph b">See also:</strong></p>
+                              <p class="p see_subsection"><a class="xref" href="group__CUDART__PEER.html#group__CUDART__PEER_1gbc095a10a4d953e972ef918997c5e567" title="Queries if a device may directly access a peer device's memory." shape="rect">cudaDeviceCanAccessPeer</a>, <a class="xref" href="group__CUDART__PEER.html#group__CUDART__PEER_1g9e5ea65a18938c2b8715a5602105c306" title="Enables direct access to memory allocations on a peer device." shape="rect">cudaDeviceEnablePeerAccess</a></p>
+                              <p class="p"></p>
+                           </div>
+                        </dd>
+                        <dt class="description"><a name="group__CUDART__PEER_1g9e5ea65a18938c2b8715a5602105c306" id="group__CUDART__PEER_1g9e5ea65a18938c2b8715a5602105c306" shape="rect">
+                              <!-- --></a><span><a href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gf599e5b8b829ce7db0f5216928f6ecb6" title="" shape="rect">cudaError_t</a> cudaDeviceEnablePeerAccess (  int <span>&nbsp;</span><span class="keyword keyword apiItemName">peerDevice</span>, unsigned int <span>&nbsp;</span><span class="keyword keyword apiItemName">flags</span> ) </span></dt>
+                        <dd class="description">
+                           <div class="section">Enables direct access to memory allocations on a peer device. </div>
+                           <div class="section">
+                              <h6 class="parameter_header">
+                                 Parameters
+                                 
+                              </h6>
+                              <dl class="table-display-params">
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">peerDevice</span></tt></dt>
+                                 <dd>- Peer device to enable direct access to from the current device </dd>
+                                 <dt><tt class="code"><span class="keyword keyword apiItemName">flags</span></tt></dt>
+                                 <dd>- Reserved for future use and must be set to 0</dd>
+                              </dl>
+                           </div>
+                           <div class="section">
+                              <h6 class="return_header">Returns</h6>
+                              <p class="return"><a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038e355f04607d824883b4a50662830d591" shape="rect">cudaSuccess</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038938c6e8b96ecde62e3ab5137156f739a" shape="rect">cudaErrorInvalidDevice</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00380bc28e8217afa14b95f907631cb84f33" shape="rect">cudaErrorPeerAccessAlreadyEnabled</a>, <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00383e8aef5398ee38e28ed41e357b48917c" shape="rect">cudaErrorInvalidValue</a></p>
+                           </div>
+                           <div class="section">
+                              <h6 class="description_header">Description</h6>
+                              <p>On success, all allocations from <tt class="ph tt code">peerDevice</tt> will immediately be accessible by the current device. They will remain accessible until access is explicitly disabled using
+                                 <a class="xref" href="group__CUDART__PEER.html#group__CUDART__PEER_1gae24fc50bd0f1ce7f69032f91bde87ac" title="Disables direct access to memory allocations on a peer device." shape="rect">cudaDeviceDisablePeerAccess()</a> or either device is reset using <a class="xref" href="group__CUDART__DEVICE.html#group__CUDART__DEVICE_1gdcc2c6f914eb9461565b12648faa5e28" title="Destroy all allocations and reset all state on the current device in the current process." shape="rect">cudaDeviceReset()</a>.
+                              </p>
+                              <p class="p">Note that access granted by this call is unidirectional and that in order to access memory on the current device from <tt class="ph tt code">peerDevice</tt>, a separate symmetric call to <a class="xref" href="group__CUDART__PEER.html#group__CUDART__PEER_1g9e5ea65a18938c2b8715a5602105c306" title="Enables direct access to memory allocations on a peer device." shape="rect">cudaDeviceEnablePeerAccess()</a> is required.
+                              </p>
+                              <p class="p">Peer access is not supported in 32 bit applications.</p>
+                              <p class="p">Returns <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e0038938c6e8b96ecde62e3ab5137156f739a" shape="rect">cudaErrorInvalidDevice</a> if <a class="xref" href="group__CUDART__PEER.html#group__CUDART__PEER_1gbc095a10a4d953e972ef918997c5e567" title="Queries if a device may directly access a peer device's memory." shape="rect">cudaDeviceCanAccessPeer()</a> indicates that the current device cannot directly access memory from <tt class="ph tt code">peerDevice</tt>.
+                              </p>
+                              <p class="p">Returns <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00380bc28e8217afa14b95f907631cb84f33" shape="rect">cudaErrorPeerAccessAlreadyEnabled</a> if direct access of <tt class="ph tt code">peerDevice</tt> from the current device has already been enabled.
+                              </p>
+                              <p class="p">Returns <a class="xref" href="group__CUDART__TYPES.html#group__CUDART__TYPES_1gg3f51e3575c2178246db0a94a430e00383e8aef5398ee38e28ed41e357b48917c" shape="rect">cudaErrorInvalidValue</a> if <tt class="ph tt code">flags</tt> is not 0.
+                              </p>
+                              <p class="p"></p>
+                              <p class="p"></p>
+                              <p class="p">
+                                 <div class="note note"><span class="notetitle">Note:</span><p class="p">Note that this function may also return error codes from previous, asynchronous launches.</p>
+                                 </div>
+                              </p>
+                              <p class="p"></p>
+                              <p class="p apiDesc_subtitle"><strong class="ph b">See also:</strong></p>
+                              <p class="p see_subsection"><a class="xref" href="group__CUDART__PEER.html#group__CUDART__PEER_1gbc095a10a4d953e972ef918997c5e567" title="Queries if a device may directly access a peer device's memory." shape="rect">cudaDeviceCanAccessPeer</a>, <a class="xref" href="group__CUDART__PEER.html#group__CUDART__PEER_1gae24fc50bd0f1ce7f69032f91bde87ac" title="Disables direct access to memory allocations on a peer device." shape="rect">cudaDeviceDisablePeerAccess</a></p>
+                              <p class="p"></p>
+                           </div>
+                        </dd>
+                     </dl>
+                  </div>
+               </div>
+               
+               <hr id="contents-end"></hr>
+               
+            </article>
+         </div>
+      </div>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/formatting/common.min.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/omniture/s_code_us_dev_aut1-nolinktrackin.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/omniture/omniture.js"></script>
+      <noscript><a href="http://www.omniture.com" title="Web Analytics"><img src="http://omniture.nvidia.com/b/ss/nvidiacudadocs/1/H.17--NS/0" height="1" width="1" border="0" alt=""></img></a></noscript>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-write.js"></script>
+      <script language="JavaScript" type="text/javascript" charset="utf-8" src="../common/scripts/google-analytics/google-analytics-tracker.js"></script>
+      <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher: "998dc202-a267-4d8e-bce9-14debadb8d92", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script></body>
+</html>
