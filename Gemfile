@@ -1,3 +1,4 @@
 source 'https://rubygems.org' 
-gem 'sqlite3'
+gem 'mini_portile'
 gem 'nokogiri'
+gem 'sqlite3'

@@ -1,9 +1,0 @@
-# This is the robots file for
-# http://docs.nvidia.com
-# Updated 29 Jul 2013
-#
-
-User-agent: *
-Disallow: /cuda/pdf/
-
-Sitemap: http://docs.nvidia.com/cuda/sitemap.xml
