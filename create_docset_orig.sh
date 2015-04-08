@@ -13,9 +13,8 @@ echo -e "$(tput setaf 2)--> Downloading the documentation of '$DOCSET_NAME'$(tpu
       --restrict-file-names=windows  \
       --domains nvidia.com --no-parent http://docs.nvidia.com/cuda 2>&1 | egrep -i "%|Saving to"
 
-cp -r docs.phalconphp.com/en/latest/* "${DOCSET_NAME}.docset/Contents/Resources/Documents/"
-mv docs.phalconphp.com/en/latest/* "${DOCSET_NAME}.docset/Contents/Resources/Documents/"
-rm -rf docs.phalconphp.com
+cp -r docs.nvidia.com/cuda/* "${DOCSET_NAME}.docset/Contents/Resources/Documents/"
+mv docs.nvidia.com/cuda/* "${DOCSET_NAME}.docset/Contents/Resources/Documents/"
 
 # CREATE PROPERTY LIST...
 echo -e "$(tput setaf 2)--> Creating the Property List...$(tput sgr0)"
@@ -45,7 +44,7 @@ EOF
 
 # PARSE & CLEAN THE HTML DOCUMENTATION. FILL THE DB...
 echo -e "$(tput setaf 2)--> Parsing the documentation...$(tput sgr0)"
-php phalcon_parser.php ${DOCSET_NAME}.docset ${DOCSET_NAME}.docset/Contents/Resources/Documents
+php cuda_parser.php ${DOCSET_NAME}.docset ${DOCSET_NAME}.docset/Contents/Resources/Documents
 
 # AVOID HORIZONTAL SCROLLING BY DIMINISHING MIN-WIDTH OF HTLM DOC
 for stylesheet in `find ${DOCSET_NAME}.docset/Contents/Resources/Documents -name *.css`; do

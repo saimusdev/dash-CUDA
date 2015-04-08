@@ -10,7 +10,7 @@ This docset is to be used with [Dash for Mac](http://kapeli.com/dash), or [Zeal 
 
 ## Basic Installation
 
-* If you plan on using it with **Dash**, just copy the [CUDA]() provided to '/Users/username/Library/Application Support/Dash/Docsets/'. Visit [Dash](http://kapeli.com/dash) website for more info.
+* If you plan on using it with **Dash**, `create_docset_orig.sh` will copy the [CUDA]() docset to '/Users/username/Library/Application Support/Dash/Docsets/' automatically. Visit [Dash](http://kapeli.com/dash) website for more info.
 * If you're going to use it with **Zeal** you'll find where to store the [CUDA]() in the application 'Options' menu. Visit [their Github page](https://github.com/jkozera/zeal) for more info. 
 
 
@@ -20,8 +20,8 @@ Basically, execute the following commands:
 
 ```
 git clone https://github.com/simioprg/dash-CUDA.git
-cd dash-foundation
-./create_docset.sh
+cd dash-CUDA
+./create_docset_orig.sh
 cd ..
 rm -rf dash-foundation
 ```
