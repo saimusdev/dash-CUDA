@@ -22,17 +22,32 @@ DOCSET_NAME="CUDA"
 DOCSET_FOLDER="#{DOCSET_NAME}.docset"
 DOCSET_DOCS_SUBFOLDER="#{DOCSET_FOLDER}/Contents/Resources/Documents"
 PLIST_FILE="#{DOCSET_FOLDER}/Contents/Info.plist"
-COMPLETE_DOCS=[ 
-      "docs.nvidia.com/cuda/cuda-runtime-api/" #,
-#      "docs.nvidia.com/cuda/cuda-driver-api/",
-#      "docs.nvidia.com/cuda/cuda-math-api/",
-#      "docs.nvidia.com/cuda/cublas/",
-#      "docs.nvidia.com/cuda/nvblas/",
-#      "docs.nvidia.com/cuda/cufft/",
-#      "docs.nvidia.com/cuda/curand/",
-#      "docs.nvidia.com/cuda/cusparse/",
-#      "docs.nvidia.com/cuda/npp/",
-#      "docs.nvidia.com/cuda/thrust/"
+COMPLETE_DOCS=[
+	[ # API documentation 
+	"docs.nvidia.com/cuda/cuda-runtime-api/",
+	"docs.nvidia.com/cuda/cuda-driver-api/",
+	"docs.nvidia.com/cuda/cuda-math-api/",
+	"docs.nvidia.com/cuda/cublas/index.html/",
+	"docs.nvidia.com/cuda/nvblas/index.html/",
+	"docs.nvidia.com/cuda/cufft/index.html/",
+	"docs.nvidia.com/cuda/curand/index.html/",
+	"docs.nvidia.com/cuda/cusparse/index.html/",
+	#"docs.nvidia.com/cuda/npp/", # Currently only in PDF formatting
+	], 
+	[ # Guides 
+	"docs.nvidia.com/cuda/nvrtc/index.html",
+	"docs.nvidia.com/cuda/thrust/index.html",
+	"docs.nvidia.com/cuda/cusolver/index.html",
+	"docs.nvidia.com/cuda/cuda-c-programming-guide/index.html",
+	"docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+	"docs.nvidia.com/cuda/maxwell-compatibility-guide/index.html",
+	"docs.nvidia.com/cuda/kepler-tuning-guide/index.html",
+	"docs.nvidia.com/cuda/maxwell-tuning-guide/index.html",
+	"docs.nvidia.com/cuda/parallel-thread-execution/index.html",
+	"docs.nvidia.com/cuda/optimus-developer-guide/index.html",
+	"docs.nvidia.com/cuda/video-decoder/index.html",
+	"docs.nvidia.com/cuda/inline-ptx-assembly/index.html"
+	]
 ]
 UNNECESARY_HTML_NODES=[
 	"/html/body/header[@id='header']",
@@ -50,6 +65,7 @@ UNNECESARY_HTML_NODES=[
 	"/html/body/div[@id='stOverlay']"
 ]
 UNNECESARY_FILES=[
+	"docs.nvidia.com/robots.txt",
 	"docs.nvidia.com/cuda/search",
 	"docs.nvidia.com/cuda/common/scripts",
 	"docs.nvidia.com/cuda/common/formatting/*.js",
@@ -71,8 +87,8 @@ UPDATED_STYLES=[
 # CREATE THE DOCSET FOLDER
 task :create_docset do
     print_stdout "--> Creating folder structure..."
-    if File.directory? DOCSET_DOCS_SUBFOLDER 
-        FileUtils.rm_rf  DOCSET_DOCS_SUBFOLDER
+    if File.directory? DOCSET_FOLDER 
+        FileUtils.rm_rf  DOCSET_FOLDER
     end
     FileUtils.mkdir_p DOCSET_DOCS_SUBFOLDER
     FileUtils.cp %w(icon.png icon@2x.png), "#{DOCSET_NAME}.docset/"
@@ -81,12 +97,14 @@ end
 # DOWNLOAD THE DOCUMENTATION
 task :download_docs do
     print_stdout "--> Downloading the documentation for #{DOCSET_NAME}..."
-    COMPLETE_DOCS.each do |docs|
-        print_stdout "--> Downloading from 'http://#{docs}'..."
-        system "wget --recursive --page-requisites --adjust-extension --convert-links \
-                --domains #{DOMAIN} --no-parent http://#{docs} 2>&1 | egrep -i '%|Saving to\'"
-        FileUtils.cp_r(docs,"#{DOCSET_NAME}.docset/Contents/Resources/Documents")
-        #FileUtils.mv(docs,"#{DOCSET_NAME}.docset/Contents/Resources/Documents")
+    COMPLETE_DOCS.each do |all_docs|
+    	all_docs.each do |some_docs|
+	        print_stdout "--> Downloading from 'http://#{some_docs}'..."
+	        system "wget --recursive --page-requisites --adjust-extension --convert-links \
+	                --domains #{DOMAIN} --no-parent http://#{some_docs} 2>&1 | egrep -i '%|Saving to\'"
+	        FileUtils.cp_r(some_docs,"#{DOCSET_NAME}.docset/Contents/Resources/Documents")
+	        #FileUtils.mv(some_docs,"#{DOCSET_NAME}.docset/Contents/Resources/Documents")
+    	end
     end
 end
 
@@ -131,22 +149,27 @@ end
 
 task :parse_docs do
   print_stdout "--> Parsing the documentation for entries..."
-
 end
 
 # CLEAN THE DOCUMENTATION AND REMOVE UNNECESARY FILES
 task :clean_docs do
-  print_stdout "--> Cleaning the documentation for better visualization..."
-  COMPLETE_DOCS.each do |files|
-	html_docs = []
-	get_files(files, html_docs)
-	html_docs.each do |doc_path|
-		print "Cleaning: '#{doc_path}'\n"
-		rewrite_html(doc_path)
+ 	print_stdout "--> Cleaning the documentation for better visualization..."
+ 	if File.directory? DOCS_FOLDER
+	 	COMPLETE_DOCS.each do |all_docs|
+		    all_docs.each do |some_docs|	
+				html_docs = []
+				get_files(some_docs, html_docs)
+				html_docs.each do |doc_path|
+					print "Cleaning: '#{doc_path}'\n"
+					rewrite_html(doc_path)
+				end
+				remove_unnecessaries
+				update_css
+			end
+		end
+	else
+		print_stderr "Need to download the documentation before cleaning it!"
 	end
-	remove_unnecessaries
-	update_css
-  end
 end
 
 task :import_docset do
@@ -176,6 +199,7 @@ private
 	num_guides = 0
 	num_methods = 0
 
+	# Return all files (including subdirectories) contained in path
 	def get_files (path, files_found) 
 		if File.directory? path
 			Dir.foreach path do |file| 
@@ -188,6 +212,7 @@ private
 		end
 	end
 
+	# Remove all unnecessary nodes from html_file
 	def rewrite_html (html_file)
 		doc = Nokogiri::HTML(open(html_file))
 		UNNECESARY_HTML_NODES.each do |node_path|
@@ -197,6 +222,7 @@ private
    		File.open(html_file,'w') { |file| doc.write_html_to file }
 	end 
 
+	# Add updated styles to stylesheets
 	def update_css ()
 		UPDATED_STYLES.each do |rules|
 			File.open(rules[0],'a') do |file| 
@@ -205,6 +231,7 @@ private
 		end
 	end
 
+	# Remove unnecessary files (*.js,...)
 	def remove_unnecessaries ()
 		UNNECESARY_FILES.each do |file|
         	Dir.glob(file).each { |f| FileUtils.rm_rf f }
