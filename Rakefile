@@ -8,10 +8,11 @@ task :default => [
   :create_docset,
   :download_docs,
   :create_plist,
+  :create_db,
   #:parse_docs,
-  #:clean_docs,
+  :clean_docs,
   #:import_docset,
-  :clean
+  #:clean
 ]
 
 # Docset specific variables
@@ -34,9 +35,10 @@ COMPLETE_DOCS=[
 #      "docs.nvidia.com/cuda/thrust/"
 ]
 
+
 # CREATE THE DOCSET FOLDER
 task :create_docset do
-    print_stdout "--> Creating the folder structure..."
+    print_stdout "--> Creating folder structure..."
     if File.directory? DOCSET_DOCS_SUBFOLDER 
         FileUtils.rm_rf  DOCSET_DOCS_SUBFOLDER
     end
@@ -46,9 +48,9 @@ end
 
 # DOWNLOAD THE DOCUMENTATION
 task :download_docs do
-    print_stdout "--> Downloading the documentation of '#{DOCSET_NAME}'..."
+    print_stdout "--> Downloading the documentation for #{DOCSET_NAME}..."
     COMPLETE_DOCS.each do |docs|
-        print_stdout "--> Downloading 'http://#{docs}'..."
+        print_stdout "--> Downloading from 'http://#{docs}'..."
         system "wget --recursive --page-requisites --adjust-extension --convert-links \
                 --domains #{DOMAIN} --no-parent http://#{docs} 2>&1 | egrep -i '%|Saving to\'"
         FileUtils.cp_r(docs,"#{DOCSET_NAME}.docset/Contents/Resources/Documents")
@@ -56,9 +58,9 @@ task :download_docs do
     end
 end
 
-# CREATE PROPERTY LIST
+# CREATE THE PROPERTY LIST
 task :create_plist do
-    print_stdout "--> Creating the Property List..."
+    print_stdout "--> Creating a Property List..."
     tab_space = ""
     4.times { tab_space <<= " " }
 
@@ -86,6 +88,14 @@ task :create_plist do
     plist_file.close
 end
 
+# CREATE THE DATABASE
+task :create_db do
+    print_stdout "--> Creating a Database to index documentation..."
+   	db = SQLite3::Database.new "#{DOCSET_NAME}.docset/Contents/Resources/docSet.dsidx" 
+   	db.execute "CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);"
+   	db.execute "CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);"
+end
+
 
 task :parse_docs do
   print_stdout "--> Parsing the documentation for entries..."
@@ -93,8 +103,15 @@ task :parse_docs do
 end
 
 task :clean_docs do
-  print_stdout "--> Cleaning the documentation..."
-   
+  print_stdout "--> Cleaning the documentation for better visualization..."
+  COMPLETE_DOCS.each do |files|
+	html_docs = []
+	get_files(files, html_docs)
+	html_docs.each do |doc_path|
+		print "Cleaning: '#{doc_path}'\n"
+		rewrite_html(doc_path)
+	end
+  end
 end
 
 task :import_docset do
@@ -111,6 +128,40 @@ end
 
 # Auxiliar functions 
 private
+	EXCLUDED_FILES = ['.', '..', 'index.html', '.DS_Store']; 
+	EXCLUDED_EXTENSIONS = ['txt','js','css','ico','png','svg','png','jpg'];
+
+	CLASS = "Class"
+	CONSTANT = "Constant"
+	GUIDE = "Guide"
+	METHOD = "Method"
+
+	num_classes = 0
+	num_constants = 0
+	num_guides = 0
+	num_methods = 0
+
+	def get_files (path, files_found) 
+		if File.directory? path
+			Dir.foreach path do |file| 
+				if (!EXCLUDED_FILES.include? file)
+					get_files(path+file, files_found) 
+				end
+			end
+		elsif File.file? path
+			files_found << path
+		end
+	end
+
+	def rewrite_html (html_file)
+		doc = Nokogiri::HTML(open(html_file))
+		header = doc.xpath('//body')
+		print header
+	end 
+
 	def print_stderr(text); print "\e[31m#{text}\e[0m\n"; end
 	def print_stdout(text); print "\e[32m#{text}\e[0m\n"; end
+
+
+
 

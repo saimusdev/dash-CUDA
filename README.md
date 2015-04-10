@@ -1,7 +1,7 @@
-# [CUDA](http://www.nvidia.com/object/cuda_home_new.html) Dash docset
+## [CUDA](http://www.nvidia.com/object/cuda_home_new.html) documentation for Dash
 
+![Nvidia CUDA](./CUDA_logo.jpg)
 
-[CUDA](http://www.nvidia.com/object/cuda_home_new.html) documentation for Dash
 
 #### Docset unusable for the time being. 
 
