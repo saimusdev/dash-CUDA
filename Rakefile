@@ -9,8 +9,8 @@ task :default => [
   :download_docs,
   :create_plist,
   :create_db,
-  #:parse_docs,
   :clean_docs,
+  #:parse_docs,
   #:import_docset,
   #:clean
 ]
@@ -27,11 +27,11 @@ COMPLETE_DOCS=[
 	"docs.nvidia.com/cuda/cuda-runtime-api/",
 	"docs.nvidia.com/cuda/cuda-driver-api/",
 	"docs.nvidia.com/cuda/cuda-math-api/",
-	"docs.nvidia.com/cuda/cublas/index.html/",
-	"docs.nvidia.com/cuda/nvblas/index.html/",
-	"docs.nvidia.com/cuda/cufft/index.html/",
-	"docs.nvidia.com/cuda/curand/index.html/",
-	"docs.nvidia.com/cuda/cusparse/index.html/",
+	"docs.nvidia.com/cuda/cublas/index.html",
+	"docs.nvidia.com/cuda/nvblas/index.html",
+	"docs.nvidia.com/cuda/cufft/index.html",
+	"docs.nvidia.com/cuda/curand/index.html",
+	"docs.nvidia.com/cuda/cusparse/index.html",
 	#"docs.nvidia.com/cuda/npp/", # Currently only in PDF formatting
 	], 
 	[ # Guides 
@@ -69,6 +69,7 @@ UNNECESARY_FILES=[
 	"docs.nvidia.com/cuda/search",
 	"docs.nvidia.com/cuda/common/scripts",
 	"docs.nvidia.com/cuda/common/formatting/*.js",
+	"docs.nvidia.com/cuda/cuda-runtime-api/",
 ]
 UPDATED_STYLES=[
 	# First element: Stylesheet (file)
@@ -240,7 +241,4 @@ private
 
 	def print_stderr(text); print "\e[31m#{text}\e[0m\n"; end
 	def print_stdout(text); print "\e[32m#{text}\e[0m\n"; end
-
-
-
 
