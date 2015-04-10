@@ -34,7 +34,39 @@ COMPLETE_DOCS=[
 #      "docs.nvidia.com/cuda/npp/",
 #      "docs.nvidia.com/cuda/thrust/"
 ]
-
+UNNECESARY_HTML_NODES=[
+	"/html/body/header[@id='header']",
+	"/html/body/div[@id='site-content']/nav[@id='site-nav']",
+	"/html/body/div[@id='site-content']/div[@id='resize-nav']",
+	"/html/body/div[@id='site-content']/nav[@id='search-results']",
+	"/html/body/div[@id='site-content']/div[@id='contents-container']/div[@id='breadcrumbs-container']",
+	"/html/body/div[@id='site-content']/div[@id='contents-container']/article[@id='contents']/div[@class='topic']/h2[@class='topictitle2']",
+	"/html/body/div[@id='site-content']/div[@id='contents-container']/article[@id='contents']/div[@class='topic']/h3[@class='fake_sectiontitle']",
+	"/html/body/div[@id='site-content']/div[@id='contents-container']/article[@id='contents']/hr[@id='contents-end']",
+	"/html/body//script",
+	"/html/body/div[@id='stcpDiv']",
+	"/html/body/iframe[@id='stSegmentFrame']",
+	"/html/body/div[@id='stwrapper']",
+	"/html/body/div[@id='stOverlay']"
+]
+UNNECESARY_FILES=[
+	"docs.nvidia.com/cuda/search",
+	"docs.nvidia.com/cuda/common/scripts",
+	"docs.nvidia.com/cuda/common/formatting/*.js",
+]
+UPDATED_STYLES=[
+	# First element: Stylesheet (file)
+	["docs.nvidia.com/cuda/common/formatting/site.css", 
+		# Second element: List of updated styles
+		[
+'#site-content { 
+	position:fixed; 
+	top: 0px; bottom:0; left:0; right:0;
+	border:0px;
+}'
+		]
+	]
+]
 
 # CREATE THE DOCSET FOLDER
 task :create_docset do
@@ -102,6 +134,7 @@ task :parse_docs do
 
 end
 
+# CLEAN THE DOCUMENTATION AND REMOVE UNNECESARY FILES
 task :clean_docs do
   print_stdout "--> Cleaning the documentation for better visualization..."
   COMPLETE_DOCS.each do |files|
@@ -111,6 +144,8 @@ task :clean_docs do
 		print "Cleaning: '#{doc_path}'\n"
 		rewrite_html(doc_path)
 	end
+	remove_unnecessaries
+	update_css
   end
 end
 
@@ -155,9 +190,26 @@ private
 
 	def rewrite_html (html_file)
 		doc = Nokogiri::HTML(open(html_file))
-		header = doc.xpath('//body')
-		print header
+		UNNECESARY_HTML_NODES.each do |node_path|
+        	node = doc.xpath(node_path)
+        	node.remove
+   		end
+   		File.open(html_file,'w') { |file| doc.write_html_to file }
 	end 
+
+	def update_css ()
+		UPDATED_STYLES.each do |rules|
+			File.open(rules[0],'a') do |file| 
+				rules[1].each { |rule| file.puts rule<<"\n" }
+   			end
+		end
+	end
+
+	def remove_unnecessaries ()
+		UNNECESARY_FILES.each do |file|
+        	Dir.glob(file).each { |f| FileUtils.rm_rf f }
+   		end
+	end
 
 	def print_stderr(text); print "\e[31m#{text}\e[0m\n"; end
 	def print_stdout(text); print "\e[32m#{text}\e[0m\n"; end
